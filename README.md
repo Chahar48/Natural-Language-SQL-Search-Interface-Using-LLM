@@ -85,6 +85,7 @@ Language: Python 3.10+
 
 
 ### ⚙️ Setup Instructions
+```
 1️⃣ Clone Repository
 git clone <your-github-repo-url>
 cd AI_SQL_Search_Interface
@@ -135,6 +136,7 @@ python -m streamlit run app/main.py
 Open browser:
 
 http://localhost:8501
+```
 
 ## 🧪 Sample Queries
 Structured Queries
