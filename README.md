@@ -2,7 +2,7 @@
 A secure and intelligent Natural Language → SQL search system built using Groq LLM, PostgreSQL + pgvector, SQLAlchemy, and Streamlit. The system allows users to query a relational database in plain English, with strong safety guarantees and hybrid semantic search. 
 
 
-🚀 Project Overview
+## 🚀 Project Overview
 
 This project demonstrates how modern LLMs can be safely integrated with traditional databases to enable:
 
@@ -17,7 +17,7 @@ This project demonstrates how modern LLMs can be safely integrated with traditio
  - Real-world design decisions
 
 
-🧱 System Architecture
+## 🧱 System Architecture
 User (Streamlit UI)
         ↓
 Natural Language Query
@@ -35,7 +35,7 @@ PostgreSQL (Dockerized)
 Results → Streamlit UI
 
 
-🗂️ Project Structure
+## 🗂️ Project Structure
 AI_SQL_Search_Interface/
 │
 ├── app/
