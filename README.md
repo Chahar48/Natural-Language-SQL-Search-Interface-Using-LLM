@@ -37,7 +37,7 @@ PostgreSQL (Dockerized)
 Results
         ↓
 Streamlit UI
-
+```
 
 ```markdown
 ## 🗂️ Project Structure
@@ -70,8 +70,7 @@ AI_SQL_Search_Interface/
 ├── requirements.txt
 ├── .env
 └── README.md
-yaml
-Copy code
+```
 
 
 
