@@ -42,7 +42,6 @@ Streamlit UI
 
 ## 🗂️ Project Structure
 ```markdown
-```text
 AI_SQL_Search_Interface/
 │
 ├── app/
