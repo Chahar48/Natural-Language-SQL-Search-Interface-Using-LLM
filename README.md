@@ -125,14 +125,14 @@ pip install -r requirements.txt
             #docker run -d --name pgvector-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=query_search_db -p 5432:5432 pgvector/pgvector:pg15
 
             #What this does:
-          
-            Component	Purpose
-            pgvector/pgvector:pg15	PostgreSQL 15 with pgvector
-            POSTGRES_DB	Creates database
-            POSTGRES_USER	DB user
-            POSTGRES_PASSWORD	DB password
-            -p 5432:5432	Exposes DB to localhost
-            
+                        | Component                | Purpose                     |
+            | ------------------------ | --------------------------- |
+            | `pgvector/pgvector:pg15` | PostgreSQL 15 with pgvector |
+            | `POSTGRES_DB`            | Creates database            |
+            | `POSTGRES_USER`          | DB user                     |
+            | `POSTGRES_PASSWORD`      | DB password                 |
+            | `-p 5432:5432`           | Exposes DB to localhost     |
+
             ✔ Success = container ID printed
  
        🟢 Step 4.4 — Verify Database Is Running
