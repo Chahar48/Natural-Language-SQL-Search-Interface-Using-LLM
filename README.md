@@ -39,30 +39,31 @@ Results → Streamlit UI
 AI_SQL_Search_Interface/
 │
 ├── app/
-│   ├── main.py                # Streamlit UI (thin layer)
+│   ├── main.py                 # Streamlit UI (thin layer)
 │
 │   ├── db/
-│   │   ├── connection.py      # SQLAlchemy DB connection
-│   │   ├── schema.sql         # Database schema
-│   │   └── seed_data.sql      # Sample data
+│   │   ├── connection.py       # SQLAlchemy DB connection
+│   │   ├── schema.sql          # Database schema
+│   │   └── seed_data.sql       # Sample data
 │
 │   ├── embeddings/
-│   │   └── embedder.py        # Text → vector embeddings
+│   │   └── embedder.py         # Text → vector embeddings
 │
 │   ├── llm/
-│   │   ├── prompt.py          # Strict NL → SQL prompt
-│   │   └── sql_generator.py   # Groq LLM integration
+│   │   ├── prompt.py           # Strict NL → SQL prompt
+│   │   └── sql_generator.py    # Groq LLM integration
 │
 │   ├── search/
-│   │   ├── sql_executor.py    # Safe SQL execution
-│   │   └── hybrid_search.py   # SQL + vector search
+│   │   ├── sql_executor.py     # Safe SQL execution
+│   │   └── hybrid_search.py    # SQL + vector search
 │
 │   ├── validators/
-│   │   └── sql_validator.py   # SQL injection prevention
+│   │   └── sql_validator.py    # SQL injection prevention
 │
 ├── requirements.txt
 ├── .env
 └── README.md
+
 
 
 🛠️ Tech Stack
