@@ -106,6 +106,9 @@ docker run -d \
   -p 5432:5432 \
   pgvector/pgvector:pg15
 
+or
+#docker run -d --name pgvector-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=query_search_db -p 5432:5432 pgvector/pgvector:pg15
+
 5️⃣ Create Tables & Seed Data
 
 Use pgAdmin → Query Tool to run:
