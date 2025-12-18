@@ -1,4 +1,4 @@
-# Natural-Language-SQL-Search-Interface-Using-LLM
+## Natural-Language-SQL-Search-Interface-Using-LLM
 A secure and intelligent Natural Language → SQL search system built using Groq LLM, PostgreSQL + pgvector, SQLAlchemy, and Streamlit. The system allows users to query a relational database in plain English, with strong safety guarantees and hybrid semantic search. 
 
 
@@ -18,6 +18,8 @@ This project demonstrates how modern LLMs can be safely integrated with traditio
 
 
 ## 🧱 System Architecture
+
+```text
 User (Streamlit UI)
         ↓
 Natural Language Query
@@ -32,10 +34,15 @@ Hybrid Search Logic
         ↓
 PostgreSQL (Dockerized)
         ↓
-Results → Streamlit UI
+Results
+        ↓
+Streamlit UI
 
 
+```markdown
 ## 🗂️ Project Structure
+
+```text
 AI_SQL_Search_Interface/
 │
 ├── app/
@@ -63,10 +70,13 @@ AI_SQL_Search_Interface/
 ├── requirements.txt
 ├── .env
 └── README.md
+yaml
+Copy code
 
 
 
-🛠️ Tech Stack
+
+### 🛠️ Tech Stack
 
 LLM: Groq (NL → SQL generation)
 Database: PostgreSQL + pgvector (Dockerized)
@@ -76,7 +86,7 @@ UI: Streamlit
 Language: Python 3.10+
 
 
-⚙️ Setup Instructions
+### ⚙️ Setup Instructions
 1️⃣ Clone Repository
 git clone <your-github-repo-url>
 cd AI_SQL_Search_Interface
@@ -128,7 +138,7 @@ Open browser:
 
 http://localhost:8501
 
-🧪 Sample Queries
+## 🧪 Sample Queries
 Structured Queries
 List all employees in the Engineering department
 Show all orders handled in December 2024
@@ -143,7 +153,7 @@ Security Test (Blocked)
 Drop the employees table
 
 
-🔐 Security & Safety Design
+## 🔐 Security & Safety Design
 
 LLM output is never executed directly
 
@@ -157,7 +167,7 @@ Strict SQL validation enforces:
  - This ensures production-grade safety.
 
 
-🧠 Key Design Decisions
+## 🧠 Key Design Decisions
 Q)Why Groq for NL → SQL?
 Extremely fast inference
 
@@ -176,7 +186,7 @@ Not all queries need embeddings
 Q)Structured SQL is more reliable for filters
 Semantic search improves relevance for fuzzy queries
 
-📈 Future Improvements
+## 📈 Future Improvements
 
 * Result ranking & scoring
 * Query caching (Redis)
@@ -186,7 +196,7 @@ Semantic search improves relevance for fuzzy queries
 * Agent-based query planning
 
 
-🎯 Evaluation Alignment
+## 🎯 Evaluation Alignment
 
 This project demonstrates:
 
