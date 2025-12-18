@@ -39,9 +39,9 @@ Results
 Streamlit UI
 ```
 
-```markdown
-## 🗂️ Project Structure
 
+## 🗂️ Project Structure
+```markdown
 ```text
 AI_SQL_Search_Interface/
 │
