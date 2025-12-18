@@ -1,0 +1,7 @@
+dotenv
+sqlalchemy
+psycopg2
+sentence-transformers
+numpy
+groq
+streamlit
