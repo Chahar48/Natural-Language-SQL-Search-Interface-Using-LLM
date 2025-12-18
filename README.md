@@ -97,25 +97,118 @@ venv\Scripts\activate   # Windows
 3️⃣ Install Dependencies
 pip install -r requirements.txt
 
-4️⃣ Start PostgreSQL + pgvector (Docker)
-docker run -d \
-  --name pgvector-db \
-  -e POSTGRES_USER=postgres \
-  -e POSTGRES_PASSWORD=postgres \
-  -e POSTGRES_DB=query_search_db \
-  -p 5432:5432 \
-  pgvector/pgvector:pg15
 
-or
-#docker run -d --name pgvector-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=query_search_db -p 5432:5432 pgvector/pgvector:pg15
+      🟢 Step 4.1 — Prerequisites (Check Once)
+          Docker Desktop installed
+          Docker Desktop running
+          pgAdmin 4 installed (for DB access)
+
+      🟢 Step 4.2 — Clean Start (Important)
+          Open PowerShell and run:
+          docker stop pgvector-db
+          docker rm pgvector-db
+
+        ✔ If container not found → ignore
+        ✔ Ensures no leftover configs or passwords
+
+       🟢 Step 4.3 — Run PostgreSQL + pgvector Container
+
+          #Run exactly this command:
+            docker run -d --name pgvector-db \
+              -e POSTGRES_USER=postgres \
+              -e POSTGRES_PASSWORD=postgres \
+              -e POSTGRES_DB=query_search_db \
+              -p 5432:5432 \
+              pgvector/pgvector:pg15
+
+            or
+            #docker run -d --name pgvector-db -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=query_search_db -p 5432:5432 pgvector/pgvector:pg15
+
+            #What this does:
+          
+            Component	Purpose
+            pgvector/pgvector:pg15	PostgreSQL 15 with pgvector
+            POSTGRES_DB	Creates database
+            POSTGRES_USER	DB user
+            POSTGRES_PASSWORD	DB password
+            -p 5432:5432	Exposes DB to localhost
+            
+            ✔ Success = container ID printed
+ 
+       🟢 Step 4.4 — Verify Database Is Running
+       docker ps
+       
+           You MUST see:
+           pgvector/pgvector:pg15   0.0.0.0:5432->5432/tcp
+       
+       🟢 Step 4.5 — Stop Local PostgreSQL (Windows Only)
+       
+           ⚠️ Prevents connecting to the wrong database
+           Press Win + R
+           Type services.msc
+           Find postgresql-x64-*
+           Right-click → Stop
+           
+       🟢 Step 4.6 — Connect pgAdmin to Docker Database
+       
+           Open pgAdmin
+           Right-click Servers → Register → Server
+           
+           General Tab
+           Name: Docker PostgreSQL (pgvector)
+           
+           Connection Tab:
+           Host name/address: localhost
+           Port: 5432
+           Maintenance DB: query_search_db
+           Username: postgres
+           Password: postgres
+           Save Password: ✔
+           
+           Click Save
+       
+       🟢 Step 4.7 — Verify You Are Connected to Docker DB
+       
+           Open Query Tool and run:
+           SELECT version();
+           
+           ✔ Correct output must contain:
+           PostgreSQL 15.x on x86_64-pc-linux-gnu
+           
+           ❌ If you see Visual C++, you are connected to local PostgreSQL (wrong)
+
+
+       🟢 Step 4.8 — Enable pgvector Extension
+          
+          Run:
+          CREATE EXTENSION IF NOT EXISTS vector;
+       
+       ✔ This enables pgvector inside the database
+
 
 5️⃣ Create Tables & Seed Data
+Open app/db/schema.sql
+Copy all contents
+Paste into pgAdmin Query Tool
+Click Run
 
-Use pgAdmin → Query Tool to run:
-
-app/db/schema.sql
-
+Repeat for:
 app/db/seed_data.sql
+
+            🟢 Verify Tables
+            \dt
+            
+            Expected tables:
+            departments
+            employees
+            orders
+            products
+            
+            Check vector column:
+            \d products
+            
+            Look for:
+            name_embedding | vector
 
 6️⃣ Configure Environment Variables
 
